@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" group-by-instances="true">
+    <listeners>
+   	 <listener class-name="com.sample.library.Testnglistener" />
+  </listeners>
+   <test name="Firefox test" preserve-order="true">
+     <parameter name="browser" value="firefox" />
+    <classes>
+       <class name="com.sample.scripts.VoonikLogin"/>
+
+     </classes>
+   </test> 
+   <test name="Chrome test" preserve-order="true">
+     <parameter name="browser" value="chrome" />
+    <classes>
+       <class name="com.sample.scripts.VoonikLogin"/>
+
+     </classes>
+   </test> 
+</suite> 

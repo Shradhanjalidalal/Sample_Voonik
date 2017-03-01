@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.sample.library.Testnglistener"/>
+    <listener class-name="com.sample.library.Testnglistener"/>
+  </listeners>
+  <test name="Regression">
+    <classes>
+      <class name="com.sample.scripts.VoonikLogin"/>
+    </classes>
+  </test> <!-- Regression -->
+  <test name="Regression(failed)">
+    <classes>
+      <class name="com.sample.scripts.VoonikLogin">
+        <methods>
+          <include name="setUp"/>
+          <include name="ChangePassword"/>
+          <include name="tearDown"/>
+          <include name="FilteringProduct"/>
+        </methods>
+      </class> <!-- com.sample.scripts.VoonikLogin -->
+    </classes>
+  </test> <!-- Regression(failed) -->
+</suite> <!-- Failed suite [Suite] -->
