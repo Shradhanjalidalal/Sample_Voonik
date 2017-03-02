@@ -3,7 +3,6 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
     <listener class-name="com.sample.library.Testnglistener"/>
-    <listener class-name="com.sample.library.Testnglistener"/>
   </listeners>
   <test name="Regression">
     <classes>

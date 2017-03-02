@@ -51,7 +51,7 @@ public class VoonikLoginPO
 	  return eleSearchBox;
   }
   //choose one item
-  @FindBy(xpath="(//div[@id='product_image_listing']/a/img)[3]")
+  @FindBy(xpath="(//div[@id='product_image_listing']/a/img)[2]")
   private WebElement eleItem;
   public WebElement getEleItem()
   {
@@ -65,14 +65,14 @@ public class VoonikLoginPO
 	  return eleCart;
   }
   //click on cart
-  @FindBy(xpath=".//*[@id='trow1_right']/div/div[6]/a/div")
+  @FindBy(xpath="//div[@class='col-md-12 right_menu_holder']/../div/div[6]/a")
   private WebElement eleCartClick;
   public WebElement getEleCartClick()
   {
 	  return eleCartClick;
   }
   //click on delete
-  @FindBy(xpath="//span[contains(text(),'DELETE')]")
+  @FindBy(xpath="//div[@class='item-details']/../div/div[2]/p[2]/span[2]")
   private WebElement eledelete;
   public WebElement getEledelete()
   {

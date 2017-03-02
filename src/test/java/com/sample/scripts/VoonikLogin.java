@@ -50,7 +50,7 @@ public class VoonikLogin extends BaseLib
 	  Thread.sleep(6000);
 	  executor.executeScript("arguments[0].click();", element);
 	  Voonikloginpo.elementStatus(Voonikloginpo.getEleCartClick(),"Cart Icon","displayed");
-	  Thread.sleep(3000);
+	  Thread.sleep(7000);
 	  Voonikloginpo.getEleCartClick().click();
 	  Voonikloginpo.elementStatus(Voonikloginpo.getEledelete(),"delete","enabled");
 	  Thread.sleep(6000);
