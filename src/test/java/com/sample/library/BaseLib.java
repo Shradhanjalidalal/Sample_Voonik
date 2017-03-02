@@ -18,21 +18,21 @@ import java.net.URL;
 public class BaseLib {
 	
 	public static WebDriver driver;
-	public static final String USERNAME = "shradhanjalidalal";
+	/*public static final String USERNAME = "shradhanjalidalal";
 	public static final String ACCESS_KEY = "4778fe48-9a83-4044-a236-0de35a9ab475";
-	public static final String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
+	public static final String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";*/
 	public static int sStatusCnt=0;
 	WebDriverWait wait=null;
 	
-//	@Parameters({ "browser" }) 
+	@Parameters({ "browser" }) 
 	@BeforeMethod
 	public void setUp() throws MalformedURLException{
-		DesiredCapabilities caps = DesiredCapabilities.firefox();
+		/*DesiredCapabilities caps = DesiredCapabilities.firefox();
 	    caps.setCapability("platform", "Windows 8");
 	    caps.setCapability("version", "51.0");
 	    caps.setCapability("name","Voonik Sample Test");
-	    driver = new RemoteWebDriver(new URL(URL),caps);
-		/*try{
+	    driver = new RemoteWebDriver(new URL(URL),caps);*/
+		try{
 		if(GenericLib.getCongigValue(GenericLib.sConfigFile, "BROWSER").equalsIgnoreCase("Chrome")){
 			System.setProperty("webdriver.chrome.driver",GenericLib.sDirPath+"\\resources\\jars\\chromedriver.exe");
 			System.out.println("Chrome Browser is set");
@@ -44,17 +44,17 @@ public class BaseLib {
 			driver = new FirefoxDriver();
 			
 		}
-		else{
+		/*else{
 			System.setProperty("webdriver.ie.driver", GenericLib.sDirPath+"\\resources\\jars\\IEDriverServer.exe");
 			System.out.println("InternetExplorer Browser is set");
 			driver = new InternetExplorerDriver();
 		}
-		
+		*/
 		}
 		catch(Exception e){
 			System.out.println("Problem in launching driver");
 			e.printStackTrace();
-		}*/
+		}
 	}
 	
 	@AfterMethod

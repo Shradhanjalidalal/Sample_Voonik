@@ -1,24 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests" group-by-instances="true">
+  <parameter name="browser" value="chrome"/>
   <listeners>
     <listener class-name="com.sample.library.Testnglistener"/>
   </listeners>
-  <test name="Regression">
+  <test name="Firefox test" group-by-instances="true">
+    <parameter name="browser" value="firefox"/>
     <classes>
       <class name="com.sample.scripts.VoonikLogin"/>
     </classes>
-  </test> <!-- Regression -->
-  <test name="Regression(failed)">
+  </test> <!-- Firefox test -->
+  <test name="Chrome test" group-by-instances="true">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.sample.scripts.VoonikLogin"/>
+    </classes>
+  </test> <!-- Chrome test -->
+  <test name="Chrome test(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.sample.scripts.VoonikLogin">
         <methods>
-          <include name="setUp"/>
           <include name="ChangePassword"/>
           <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="testlogin"/>
+          <include name="setup"/>
+          <include name="setup"/>
           <include name="FilteringProduct"/>
         </methods>
       </class> <!-- com.sample.scripts.VoonikLogin -->
     </classes>
-  </test> <!-- Regression(failed) -->
+  </test> <!-- Chrome test(failed) -->
+  <test name="Firefox test(failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.sample.scripts.VoonikLogin">
+        <methods>
+          <include name="ChangePassword"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="testlogin"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="FilteringProduct"/>
+        </methods>
+      </class> <!-- com.sample.scripts.VoonikLogin -->
+    </classes>
+  </test> <!-- Firefox test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

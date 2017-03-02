@@ -11,7 +11,7 @@ public class Retryanalizser implements IRetryAnalyzer  {
 	    int retryMaxCount = 1;
 	    
 	    static {
-	    PropertyConfigurator.configure("D:\\Ibrahim\\Project\\Sample_voonik\\Config.properties");
+	    PropertyConfigurator.configure(GenericLib.sDirPath+"Config.properties");
 	    }
 	    
 	    @Override

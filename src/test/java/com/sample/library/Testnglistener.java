@@ -48,8 +48,8 @@ public class Testnglistener implements ITestListener
 	public void onTestFailure(ITestResult result)
 	{
 		try{
-			capture(BaseLib.driver,result.getName());
-			String screenShotPath = capture(BaseLib.driver, result.getName());
+			capture(Parallelbaselib.driver,result.getName());
+			String screenShotPath = capture(Parallelbaselib.driver, result.getName());
 			//To get the error in the report un comment below line
 			testReporter.log(LogStatus.FAIL, result.getThrowable());
 			testReporter.log(LogStatus.FAIL, "Find the Snapshot For the error : "+ testReporter.addScreenCapture(screenShotPath));

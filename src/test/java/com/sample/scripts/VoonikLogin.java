@@ -15,7 +15,7 @@ import com.sample.library.Parallelbaselib;
 import com.sample.library.Retryanalizser;
 import com.sample.po.VoonikLoginPO;
 
-public class VoonikLogin extends BaseLib
+public class VoonikLogin extends Parallelbaselib
 {
 	VoonikLoginPO Voonikloginpo=null;
 	
